@@ -9,12 +9,22 @@ class HomePage extends StatelessWidget {
     ScreenUtil.init(context);
     return DefaultTabController(
       length: 2,
+      initialIndex: 1,
       child: Scaffold(
+        appBar: AppBar(
+          bottom: TabBar(
+            tabs: <Widget>[
+              Text('حسابي'),
+              Text('الرئيسية'),
+
+            ],
+          ),
+        ),
         endDrawer: _drawer,
         body: TabBarView(
           children: <Widget>[
-            MainTab(),
             ProfileTab(),
+            MainTab(),
           ],
         ),
 
