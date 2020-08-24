@@ -17,6 +17,12 @@ ThemeData appThemeData(BuildContext context){
 
     indicatorColor: Colors.white,
 
+    inputDecorationTheme: InputDecorationTheme(
+      labelStyle: TextStyle(
+        color: Colors.grey
+      )
+    ),
+
     floatingActionButtonTheme: FloatingActionButtonThemeData(
       backgroundColor: Colors.teal,
     ),

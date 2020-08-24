@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_kortobaa_task/src/items/setting_item.dart';
+import 'package:flutter_kortobaa_task/src/models/item_model.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ProfileTab extends StatelessWidget {
@@ -23,6 +25,12 @@ class ProfileTab extends StatelessWidget {
               alignment: Alignment.topCenter,
               child: _accountProfile(),
             ),
+          ),
+
+          Positioned(
+            child: _settingRow(),
+            bottom: 40.h,
+            width: MediaQuery.of(context).size.width,
           )
         ],
       ),
@@ -52,4 +60,18 @@ class ProfileTab extends StatelessWidget {
 
 
   }
+
+  Widget _settingRow(){
+    return Row(
+      children: settingList.map((e) => SettingItem(e)).toList(),
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+
+    );
+  }
+
+  List<ItemModel> settingList=[
+    ItemModel(title: "المفضلة",icon: Icons.star,onClick: (){}),
+    ItemModel(title: "الاعدادات",icon: Icons.settings,onClick: (){}),
+    ItemModel(title: "تعديل بياناتي",icon: Icons.edit,onClick: (){}),
+  ];
 }

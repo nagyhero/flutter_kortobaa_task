@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_kortobaa_task/src/pages/home_page.dart';
+import 'package:flutter_kortobaa_task/src/post/post_bloc.dart';
 import 'package:flutter_kortobaa_task/src/utils/app_theme.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -13,7 +15,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      home: BlocProvider(
+        create: (context)=>PostBloc(),
+          child: HomePage()
+      ),
     );
   }
 }
