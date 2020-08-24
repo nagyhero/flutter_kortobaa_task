@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_kortobaa_task/src/utils/hexColor.dart';
+import 'package:flutter_kortobaa_task/src/utils/hex_color.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 ThemeData appThemeData(BuildContext context){
   ScreenUtil.init(context);
   return ThemeData(
     primaryColor: HexColor('#bddfdc'),
+
+    fontFamily: 'Cairo',
 
     appBarTheme: AppBarTheme(
         iconTheme: IconThemeData(
@@ -23,7 +25,7 @@ ThemeData appThemeData(BuildContext context){
       labelColor: Colors.white,
       labelStyle: TextStyle(
         fontWeight: FontWeight.bold,
-        fontSize: ScreenUtil().setSp(50,allowFontScalingSelf: true),
+        fontSize: ScreenUtil().setSp(60,allowFontScalingSelf: true),
       ),
     ),
   );

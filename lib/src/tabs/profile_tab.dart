@@ -21,13 +21,35 @@ class ProfileTab extends StatelessWidget {
             padding:  EdgeInsets.only(top: MediaQuery.of(context).size.height*0.2),
             child: Align(
               alignment: Alignment.topCenter,
-              child: CircleAvatar(
-                radius: 200.sp,
-              ),
+              child: _accountProfile(),
             ),
           )
         ],
       ),
     );
+  }
+
+  Widget _accountProfile(){
+
+    return Column(
+      children: <Widget>[
+        ClipOval(
+          child: Image.asset(
+            'assets/imgs/person.jpg',
+            fit: BoxFit.fill,
+            height: ScreenUtil().setSp(400,allowFontScalingSelf: true),
+            width: ScreenUtil().setSp(400,allowFontScalingSelf: true),
+          ),
+        ),
+
+        Text('اسم المستخدم',),
+
+        Text('User99@gmail.com'),
+
+      ],
+    );
+
+
+
   }
 }
