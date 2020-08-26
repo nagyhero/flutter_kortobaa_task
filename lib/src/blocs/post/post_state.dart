@@ -1,12 +1,16 @@
 part of 'post_bloc.dart';
 
 @immutable
-abstract class PostState {
+ class PostState {
   List<PostModel> posts;
 
   PostState._();
 
   PostState({this.posts});
+
+  factory PostState.initial(){
+   return PostState._()..posts = [];
+  }
 }
 
 class InitialPostState extends PostState {}

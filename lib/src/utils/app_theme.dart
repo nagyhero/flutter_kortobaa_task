@@ -35,4 +35,11 @@ ThemeData appThemeData(BuildContext context){
       ),
     ),
   );
+
 }
+
+ThemeData rowCardTheme = ThemeData(
+  iconTheme: IconThemeData(
+    color: Colors.grey,
+  ),
+);

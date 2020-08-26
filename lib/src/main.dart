@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_kortobaa_task/src/pages/home_page.dart';
-import 'package:flutter_kortobaa_task/src/post/post_bloc.dart';
 import 'package:flutter_kortobaa_task/src/utils/app_theme.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import 'blocs/post/post_bloc.dart';
 
 void main() {
   runApp(MyApp());
