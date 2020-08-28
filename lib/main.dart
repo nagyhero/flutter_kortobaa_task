@@ -4,7 +4,7 @@ import 'package:flutter_kortobaa_task/src/pages/home_page.dart';
 import 'package:flutter_kortobaa_task/src/utils/app_theme.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'blocs/post/post_bloc.dart';
+import 'src/blocs/post/post_bloc.dart';
 
 void main() {
   runApp(MyApp());

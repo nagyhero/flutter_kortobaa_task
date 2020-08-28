@@ -145,8 +145,8 @@ class _AddPostDialogState extends State<AddPostDialog> {
 
   Future pickImage() async{
 
-    // permession check  use in real device
-   // await statusStorge();
+   // permession check  use in real device
+    //await statusStorge();
 
     var image = await ImagePicker.pickImage(
         source: ImageSource.gallery).whenComplete((){
