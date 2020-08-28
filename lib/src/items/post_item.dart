@@ -7,8 +7,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class PostItem extends StatelessWidget {
 
   PostModel _postModel;
+  Orientation orientation;
 
-  PostItem(this._postModel);
+  PostItem(this._postModel,this.orientation);
 
   @override
   Widget build(BuildContext context) {
@@ -24,12 +25,17 @@ class PostItem extends StatelessWidget {
           Padding(
             padding:  EdgeInsets.symmetric(vertical: 40.sp),
             child: Container(
-              height: 600.h,
+              height: orientation == Orientation.portrait?600.h : 1300.h,
               width: MediaQuery.of(context).size.width,
-              child: Image.asset(
+              child: _postModel.isFromDevice? Image.file(
+                _postModel.file,
+                fit: BoxFit.fill,
+              ):
+              Image.asset(
                 _postModel.imagePath,
                 fit: BoxFit.fill,
-              ),
+              )
+              ,
             ),
           ),
 
@@ -88,6 +94,8 @@ class PostItem extends StatelessWidget {
       ),
     );
   }
+
+
 
 
 }

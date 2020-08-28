@@ -18,10 +18,16 @@ class PostBloc extends Bloc<PostEvent, PostState> {
   Stream<PostState> mapEventToState(PostEvent event) async* {
     List<PostModel> list = state.posts;
     if (event is LoadPosts) {
-      yield PostLoading();
+      print(state);
+     yield PostLoading();
       List<PostModel> newList = await mock_post_request();
       list.addAll(newList);
       yield PostState(posts: list);
-    }
+      yield PostLoaded(list);
+    } else if (event is AddPost) {
+      list.insert(0,event.postModel);
+      yield PostState(posts: list);
+      yield PostLoaded(list);
+    }  
   }
 }
